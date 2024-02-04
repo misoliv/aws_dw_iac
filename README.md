@@ -105,10 +105,10 @@ nano dados.tf
 
 6- Pelo terminal, na pasta s3, execute os comandos abaixo:
 
-terraform init (iniciar o terraform)
-terraform validate (validar arquivos)
-terraform plan (criar plano de execução)
-terraform apply (aplicar a infraestrutura)
+-terraform init 
+-terraform validate 
+-terraform plan 
+-terraform apply 
 
 7- Fazer o upload dos arquivos CSV para a pasta dados dentro do AWS S3
 
@@ -121,24 +121,24 @@ cd redshift
 
 9- Criar os arquivos abaixo:
 
-touch provider.tf
-touch redshift.tf
-touch redshift_role.tf
+-touch provider.tf
+-touch redshift.tf
+-touch redshift_role.tf
 
 10- Editar cada um dos arquivos com o conteúdo que está na pasta Redshift:
 
-nano provider.tf
-nano redshift.tf
-nano redshift_role.tf
+-nano provider.tf
+-nano redshift.tf
+-nano redshift_role.tf
 
 ![redshift_tf](https://github.com/misoliv/aws_dw_iac/blob/main/img/redshift_tf.png)
 
 11- Pelo terminal, na pasta redshift, execute os comandos abaixo:
 
-terraform init (iniciar o terraform)
-terraform validate (validar arquivos)
-terraform plan (criar plano de execução)
-terraform apply (aplicar a infraestrutura)
+-terraform init 
+-terraform validate 
+-terraform plan 
+-terraform apply 
 
 ![terraform](https://github.com/misoliv/aws_dw_iac/blob/main/img/terraform_apply.png)
 

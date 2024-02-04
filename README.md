@@ -50,7 +50,6 @@ Serviço de Data Warehousing gerenciado pela AWS. É indicado para armazenar  e 
 - Metabase
 
 ---
-![arquitetura](https://github.com/misoliv/aws_dw_iac/blob/main/img/architecture.png)
 
 1- Criar um container Docker local:
 

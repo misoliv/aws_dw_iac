@@ -5,6 +5,8 @@ Criação de Cluster Redshift utilizando IaC.
 
 (Projeto do curso de Formação Engenheiro de Dados da Data Science Academy. Arquivos contém modificações do original)
 
+![arquitetura](https://github.com/misoliv/aws_dw_iac/blob/main/img/arquitetura.png)
+
 ---
 **O que é IaC?**
 

@@ -110,22 +110,22 @@ terraform validate (validar arquivos)
 terraform plan (criar plano de execução)
 terraform apply (aplicar a infraestrutura)
 
-3- Fazer o upload dos arquivos CSV para a pasta dados dentro do AWS S3
+7- Fazer o upload dos arquivos CSV para a pasta dados dentro do AWS S3
 
 ![bucket](https://github.com/misoliv/aws_dw_iac/blob/main/img/bucket.png)
 
-4- Criar a pasta abaixo:
+8- Criar a pasta abaixo:
 
 mkdir redshift
 cd redshift
 
-5- Criar os arquivos abaixo:
+9- Criar os arquivos abaixo:
 
 touch provider.tf
 touch redshift.tf
 touch redshift_role.tf
 
-6- Editar cada um dos arquivos com o conteúdo que está na pasta Redshift:
+10- Editar cada um dos arquivos com o conteúdo que está na pasta Redshift:
 
 nano provider.tf
 nano redshift.tf
@@ -133,7 +133,7 @@ nano redshift_role.tf
 
 ![redshift_tf](https://github.com/misoliv/aws_dw_iac/blob/main/img/redshift_tf.png)
 
-7- Pelo terminal, na pasta redshift, execute os comandos abaixo:
+11- Pelo terminal, na pasta redshift, execute os comandos abaixo:
 
 terraform init (iniciar o terraform)
 terraform validate (validar arquivos)
@@ -142,34 +142,34 @@ terraform apply (aplicar a infraestrutura)
 
 ![terraform](https://github.com/misoliv/aws_dw_iac/blob/main/img/terraform_apply.png)
 
-8- Acessar o painel do Redshift na AWS e confirmar que o cluster do Redshift foi criado para o DW.
+12- Acessar o painel do Redshift na AWS e confirmar que o cluster do Redshift foi criado para o DW.
 
 ![redshift-cluster](https://github.com/misoliv/aws_dw_iac/blob/main/img/redshift_cluster.png)
 
-9- Acessar o painel do IAM na AWS e verifique se a role RedshiftS3AccessRole foi criada. Copiar o endereço ARN da role e colocar no arquivo load_data.sql.
+13- Acessar o painel do IAM na AWS e verifique se a role RedshiftS3AccessRole foi criada. Copiar o endereço ARN da role e colocar no arquivo load_data.sql.
 
 ![iam_role](https://github.com/misoliv/aws_dw_iac/blob/main/img/role.png)
 
-10- Dentro da pasta dados colocar o arquivo load_data.sql (está na pasta dados). Alterar o ACCOUNT ID para o número da sua conta AWS.
+14- Dentro da pasta dados colocar o arquivo load_data.sql (está na pasta dados). Alterar o ACCOUNT ID para o número da sua conta AWS.
 
 touch load_data.sql
 nano load_data.sql
 
 ![sql](https://github.com/misoliv/aws_dw_iac/blob/main/img/sql.png)
 
-11- Copiar o endpoint do seu cluster Redshift e ajustar o comando abaixo e então executar no terminal do container dentro da pasta dados. Digitar a senha quando solicitada (a mesma senha que está no arquivo redshift.tf)
+15- Copiar o endpoint do seu cluster Redshift e ajustar o comando abaixo e então executar no terminal do container dentro da pasta dados. Digitar a senha quando solicitada (a mesma senha que está no arquivo redshift.tf)
 
 `psql -h redshift-cluster.XXXXXXXXXX.us-east-2.redshift.amazonaws.com -U adminuser -d [nome do banco de dados] -p 5439 -f load_data.sql`
 
-12- Acessar o editor de consultas do Redshift e conferir se os dados foram carregados.
+16- Acessar o editor de consultas do Redshift e conferir se os dados foram carregados.
 
 ![redshift](https://github.com/misoliv/aws_dw_iac/blob/main/img/redshift_painel.png)
 
-13- Criar um container Docker com Metabase: docker run -d -p 3000:3000 --name metabase metabase/metabase
+17- Criar um container Docker com Metabase: docker run -d -p 3000:3000 --name metabase metabase/metabase
 
-14- Acessar o Metabase pelo navegador [metabase](http://localhost:3000) e criar uma conexão ao Redshift.
+18- Acessar o Metabase pelo navegador [metabase](http://localhost:3000) e criar uma conexão ao Redshift.
 
-15- Explorar os dados e criar relatórios e gráficos.
+19- Explorar os dados e criar relatórios e gráficos.
 
 ![metabase1](https://github.com/misoliv/aws_dw_iac/blob/main/img/metabase1.png)
 ![metabase2](https://github.com/misoliv/aws_dw_iac/blob/main/img/metabase2.png)
